@@ -2,6 +2,7 @@
 
 import type { DragEvent } from "react";
 import { fieldNeedsOptions, type FieldKind, type FormDefinition } from "@/domain";
+import { EmptyState } from "./EmptyState";
 
 type BuilderCanvasProps = {
   form: FormDefinition;
@@ -55,6 +56,13 @@ export function BuilderCanvas({
           onChange={(event) => onMeta({ subtitle: event.target.value })}
         />
       </label>
+
+      {form.fields.length === 0 ? (
+        <EmptyState
+          title="This clip is bare"
+          body="Stamp a field from the left rail, or drag one onto the paper."
+        />
+      ) : null}
 
       <ol className="field-list">
         {form.fields.map((field, index) => (

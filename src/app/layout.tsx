@@ -5,6 +5,7 @@ import "./globals.css";
 import "@/ui/shell.css";
 import "@/ui/builder.css";
 import "@/ui/sheets.css";
+import "@/ui/states.css";
 
 const spectral = Spectral({
   subsets: ["latin"],

@@ -1,5 +1,6 @@
 "use client";
 
+import { EmptyState } from "./EmptyState";
 import { responsesToCsv, type FormAnswer, type FormDefinition, type FormResponse } from "@/domain";
 
 type CopiesSheetProps = {
@@ -49,7 +50,13 @@ export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
         </div>
       </header>
 
-      <div className="table-wrap">
+      {responses.length === 0 ? (
+        <EmptyState
+          title="The spindle is empty"
+          body="File a copy from the fill sheet. Seed replies come back if you restore the sample requisition."
+        />
+      ) : (
+        <div className="table-wrap">
         <table>
           <thead>
             <tr>
@@ -70,7 +77,8 @@ export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
             ))}
           </tbody>
         </table>
-      </div>
+        </div>
+      )}
     </section>
   );
 }
