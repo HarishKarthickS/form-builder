@@ -1,0 +1,194 @@
+.rail-label {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin: 0 0 6px;
+  color: var(--stamp);
+}
+
+.rail-help {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.palette ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.stamp {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 8px;
+  align-items: center;
+  text-align: left;
+  border: 2px solid var(--stamp);
+  background: #f7efe0;
+  color: var(--stamp);
+  padding: 6px;
+  cursor: grab;
+}
+
+.stamp:active {
+  cursor: grabbing;
+}
+
+.stamp-mark {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  border: 2px solid currentColor;
+  padding: 8px 0;
+  text-align: center;
+  transform: rotate(-6deg);
+}
+
+.stamp strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.stamp em {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.canvas .meta {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-family: var(--font-stamp);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--carbon);
+}
+
+.canvas .meta input {
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  padding: 6px 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 6px;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px dashed transparent;
+  padding: 4px;
+}
+
+.field-row.is-selected {
+  border-color: var(--carbon);
+  background: rgba(255, 248, 232, 0.9);
+}
+
+.field-handle,
+.field-x {
+  border: 1px solid #cbb892;
+  background: #efe3c4;
+  cursor: pointer;
+  font-family: var(--font-stamp);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.field-handle {
+  cursor: grab;
+}
+
+.field-body {
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+.field-kind {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--carbon);
+}
+
+.field-body strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.req {
+  font-family: var(--font-stamp);
+  color: var(--stamp);
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  margin-left: 6px;
+  text-transform: uppercase;
+}
+
+.opts {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.drop-well {
+  margin-top: 12px;
+  border: 2px dashed var(--brass-dark);
+  padding: 18px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.inspector {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.inspector label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.inspector input,
+.inspector textarea {
+  border: 1px solid #cbb892;
+  background: #fffaf0;
+  padding: 8px;
+}
+
+.inspector .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
