@@ -1,17 +1,19 @@
 .rail-label {
-  font-family: var(--font-stamp);
-  letter-spacing: 0.14em;
+  font-family: var(--font-ui);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-weight: 800;
   margin: 0 0 6px;
-  color: var(--stamp);
+  color: var(--alert);
 }
 
 .rail-help {
   margin: 0 0 14px;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
+  font-size: 0.85rem;
+  color: var(--type-muted);
   line-height: 1.4;
+  font-family: var(--font-type);
 }
 
 .palette ul {
@@ -29,9 +31,9 @@
   gap: 8px;
   align-items: center;
   text-align: left;
-  border: 2px solid var(--stamp);
-  background: #f7efe0;
-  color: var(--stamp);
+  border: 1px solid var(--type);
+  background: var(--ncr-white);
+  color: var(--type);
   padding: 6px;
   cursor: grab;
 }
@@ -41,47 +43,50 @@
 }
 
 .stamp-mark {
-  font-family: var(--font-stamp);
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  border: 2px solid currentColor;
+  font-family: var(--font-type);
+  letter-spacing: 0;
+  font-size: 0.72rem;
+  border: 1px dashed var(--alert);
+  color: var(--alert);
   padding: 8px 0;
   text-align: center;
-  transform: rotate(-6deg);
 }
 
 .stamp strong {
   display: block;
-  color: var(--ink);
-  font-size: 0.92rem;
+  color: var(--type);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .stamp em {
   display: block;
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--type-muted);
+  font-style: normal;
+  font-family: var(--font-type);
 }
 
 .canvas .meta {
   display: grid;
   gap: 4px;
   margin-bottom: 10px;
-  font-family: var(--font-stamp);
+  font-family: var(--font-ui);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--carbon);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--type-muted);
 }
 
 .canvas .meta input {
   border: none;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--type);
   background: transparent;
   padding: 6px 0;
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  color: var(--ink);
+  font-family: var(--font-type);
+  font-size: 1.2rem;
+  color: var(--type);
   text-transform: none;
   letter-spacing: 0;
 }
@@ -91,7 +96,7 @@
   margin: 16px 0;
   padding: 0;
   display: grid;
-  gap: 8px;
+  gap: 0;
 }
 
 .field-row {
@@ -99,25 +104,25 @@
   grid-template-columns: 36px 1fr auto;
   gap: 6px;
   align-items: stretch;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px dashed transparent;
-  padding: 4px;
+  background: transparent;
+  border-bottom: 1px dotted var(--rule);
+  padding: 6px 4px;
 }
 
 .field-row.is-selected {
-  border-color: var(--carbon);
-  background: rgba(255, 248, 232, 0.9);
+  background: var(--ncr-canary);
 }
 
 .field-handle,
 .field-x {
-  border: 1px solid #cbb892;
-  background: #efe3c4;
+  border: 1px solid var(--rule);
+  background: var(--stub);
   cursor: pointer;
-  font-family: var(--font-stamp);
-  letter-spacing: 0.06em;
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  font-weight: 700;
 }
 
 .field-handle {
@@ -134,57 +139,71 @@
 
 .field-kind {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-type);
   font-size: 0.68rem;
-  color: var(--carbon);
+  color: var(--type-muted);
 }
 
 .field-body strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 650;
 }
 
 .req {
-  font-family: var(--font-stamp);
-  color: var(--stamp);
-  letter-spacing: 0.1em;
-  font-size: 0.68rem;
+  font-family: var(--font-ui);
+  color: var(--alert);
+  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  font-weight: 800;
   margin-left: 6px;
   text-transform: uppercase;
 }
 
 .opts {
   display: block;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
+  color: var(--type-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-type);
 }
 
 .drop-well {
   margin-top: 12px;
-  border: 2px dashed var(--brass-dark);
+  border: 1px dashed var(--rule);
   padding: 18px;
   text-align: center;
-  color: var(--ink-soft);
-  font-style: italic;
+  color: var(--type-muted);
+  font-family: var(--font-type);
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 22px,
+    rgba(139, 146, 137, 0.18) 22px 23px
+  );
 }
 
 .inspector {
   display: grid;
   gap: 10px;
   align-content: start;
+  background: var(--ncr-pink);
+  padding: 12px;
+  border: 1px solid var(--ncr-pink-deep);
 }
 
 .inspector label {
   display: grid;
   gap: 4px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .inspector input,
 .inspector textarea {
-  border: 1px solid #cbb892;
-  background: #fffaf0;
+  border: none;
+  border-bottom: 1px solid var(--type);
+  background: rgba(255, 255, 255, 0.55);
   padding: 8px;
+  font-family: var(--font-type);
 }
 
 .inspector .check {

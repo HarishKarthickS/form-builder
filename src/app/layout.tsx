@@ -1,40 +1,33 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Barlow_Condensed, IBM_Plex_Mono, Spectral } from "next/font/google";
+import { Courier_Prime, Public_Sans } from "next/font/google";
 import "./globals.css";
 import "@/ui/shell.css";
 import "@/ui/builder.css";
 import "@/ui/sheets.css";
 import "@/ui/states.css";
 
-const spectral = Spectral({
+const publicSans = Public_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-ui",
 });
 
-const stamp = Barlow_Condensed({
+const courier = Courier_Prime({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-stamp",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  weight: ["400", "700"],
+  variable: "--font-type",
 });
 
 export const metadata: Metadata = {
   title: "form-builder",
-  description: "Clip fields onto a form, fill it in, export the carbon copies.",
+  description: "Collate a 3-ply NCR form, fill the white original, file the canary copies.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${spectral.variable} ${stamp.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${publicSans.variable} ${courier.variable}`}>{children}</body>
     </html>
   );
 }

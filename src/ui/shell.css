@@ -1,12 +1,15 @@
 .placeholder-copy {
   margin: 0;
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--ink-soft);
-  font-size: 1.15rem;
+  font-family: var(--font-type);
+  color: var(--type-muted);
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
 body {
-  font-family: var(--font-display), "Palatino Linotype", Palatino, serif;
+  font-family: var(--font-ui), "Public Sans", sans-serif;
+}
+
+.form-no {
+  font-family: var(--font-type), "Courier Prime", monospace;
 }

@@ -1,37 +1,43 @@
 .empty-clip,
 .error-banner {
-  border: 2px dashed var(--ink);
+  border: 1px dashed var(--type);
   padding: 28px 20px;
   text-align: center;
-  background: rgba(255, 248, 232, 0.7);
+  background: var(--ncr-canary);
+}
+
+.error-banner {
+  background: #ffd6e0;
 }
 
 .empty-stamp,
 .void-stamp {
   display: inline-block;
-  font-family: var(--font-stamp);
-  letter-spacing: 0.2em;
-  font-size: 1.4rem;
-  border: 3px solid currentColor;
+  font-family: var(--font-type);
+  letter-spacing: 0.14em;
+  font-size: 1.15rem;
+  border: 2px solid currentColor;
   padding: 4px 12px;
-  transform: rotate(-8deg);
   margin-bottom: 12px;
 }
 
 .empty-stamp {
-  color: var(--carbon);
+  color: var(--type-muted);
 }
 
 .void-stamp {
-  color: var(--stamp);
+  color: var(--alert);
 }
 
 .empty-clip h2 {
   margin: 8px 0 6px;
+  font-family: var(--font-ui);
+  font-weight: 800;
 }
 
 .error-banner p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: var(--font-type);
 }
 
 .fill-sheet .error-banner {
