@@ -69,7 +69,7 @@ select {
   margin: 0 auto 18px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   gap: 16px;
   color: #e8d7b4;
 }
