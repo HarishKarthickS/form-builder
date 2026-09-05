@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Barlow_Condensed, IBM_Plex_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import "@/ui/shell.css";
+import "@/ui/builder.css";
 
 const spectral = Spectral({
   subsets: ["latin"],
