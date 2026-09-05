@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ErrorBanner } from "./EmptyState";
 import {
   blankAnswers,
   validateAnswers,
@@ -146,6 +147,10 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
         <h2>{form.title}</h2>
         <p>{form.subtitle}</p>
       </header>
+
+      {errors.length > 0 ? (
+        <ErrorBanner message="VOID — a few lines did not pass the clerk. Fix the stamped rows." />
+      ) : null}
 
       {form.fields.map((field) => (
         <FieldControl

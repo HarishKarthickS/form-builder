@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BuilderCanvas } from "./BuilderCanvas";
 import { ClipboardFrame } from "./ClipboardFrame";
 import { CopiesSheet } from "./CopiesSheet";
+import { EmptyState, ErrorBanner } from "./EmptyState";
 import { FieldInspector } from "./FieldInspector";
 import { FieldPalette } from "./FieldPalette";
 import { FillSheet } from "./FillSheet";
@@ -14,10 +15,18 @@ export function BoardApp() {
   const board = useFormBoard();
   const [sheet, setSheet] = useState<SheetName>("clip");
 
+  if (board.loadError) {
+    return (
+      <ClipboardFrame onReset={board.restoreSeed}>
+        <ErrorBanner message={board.loadError} onRetry={board.restoreSeed} />
+      </ClipboardFrame>
+    );
+  }
+
   if (!board.form) {
     return (
       <ClipboardFrame onReset={board.restoreSeed}>
-        <p className="placeholder-copy">Opening the drawer…</p>
+        <EmptyState title="Opening the drawer" body="The clipboard should appear in a moment." />
       </ClipboardFrame>
     );
   }
@@ -41,7 +50,14 @@ export function BoardApp() {
         </section>
       ) : null}
       {sheet === "fill" ? (
-        <FillSheet key={board.form.id} form={board.form} onSubmit={board.submitResponse} />
+        board.form.fields.length === 0 ? (
+          <EmptyState
+            title="Nothing to fill"
+            body="Clip at least one field on the first sheet before anyone can sign this."
+          />
+        ) : (
+          <FillSheet key={board.form.id} form={board.form} onSubmit={board.submitResponse} />
+        )
       ) : null}
       {sheet === "copies" ? (
         <CopiesSheet form={board.form} responses={board.responses} onWipe={board.wipeCopies} />

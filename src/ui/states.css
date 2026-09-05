@@ -1,0 +1,39 @@
+.empty-clip,
+.error-banner {
+  border: 2px dashed var(--ink);
+  padding: 28px 20px;
+  text-align: center;
+  background: rgba(255, 248, 232, 0.7);
+}
+
+.empty-stamp,
+.void-stamp {
+  display: inline-block;
+  font-family: var(--font-stamp);
+  letter-spacing: 0.2em;
+  font-size: 1.4rem;
+  border: 3px solid currentColor;
+  padding: 4px 12px;
+  transform: rotate(-8deg);
+  margin-bottom: 12px;
+}
+
+.empty-stamp {
+  color: var(--carbon);
+}
+
+.void-stamp {
+  color: var(--stamp);
+}
+
+.empty-clip h2 {
+  margin: 8px 0 6px;
+}
+
+.error-banner p {
+  font-size: 1.1rem;
+}
+
+.fill-sheet .error-banner {
+  margin: 0 0 18px;
+}
