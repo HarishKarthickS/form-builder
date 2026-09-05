@@ -1,9 +1,9 @@
 export type SheetName = "clip" | "fill" | "copies";
 
 const TABS: { id: SheetName; label: string }[] = [
-  { id: "clip", label: "Type fields" },
-  { id: "fill", label: "Fill original" },
-  { id: "copies", label: "Filed copies" },
+  { id: "clip", label: "Fields" },
+  { id: "fill", label: "Preview" },
+  { id: "copies", label: "Responses" },
 ];
 
 type SheetTabsProps = {
@@ -13,7 +13,7 @@ type SheetTabsProps = {
 
 export function SheetTabs({ sheet, onChange }: SheetTabsProps) {
   return (
-    <nav className="sheet-tabs" aria-label="NCR plies">
+    <nav className="sheet-tabs" aria-label="Form sections">
       {TABS.map((tab) => (
         <button
           key={tab.id}

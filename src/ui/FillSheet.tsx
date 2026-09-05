@@ -32,7 +32,7 @@ function FieldControl({
     <div className={invalid ? "fill-field is-void" : "fill-field"}>
       <label>
         {field.label}
-        {field.required ? <span className="req">required</span> : null}
+        {field.required ? <span className="req">Required</span> : null}
       </label>
       {field.help ? <p className="help">{field.help}</p> : null}
 
@@ -140,7 +140,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
         }
         onSubmit(answers);
         setAnswers(blankAnswers(form));
-        setReceipt("Original collated. Canary and pink are in Filed copies.");
+        setReceipt("Response saved. It appears in Responses.");
       }}
     >
       <header>
@@ -149,7 +149,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
       </header>
 
       {errors.length > 0 ? (
-        <ErrorBanner message="VOID — a few lines did not pass control. Fix the red rows." />
+        <ErrorBanner message="Please fix the highlighted questions before submitting." />
       ) : null}
 
       {form.fields.map((field) => (
@@ -165,7 +165,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
       ))}
 
       <button type="submit" className="file-btn">
-        File original
+        Submit
       </button>
       {receipt ? <p className="receipt">{receipt}</p> : null}
     </form>
