@@ -1,6 +1,6 @@
 # form-builder
 
-A 3-ply NCR pad for assembling a form, filling the white original, and exporting canary copies as CSV. Everything lives in the browser (`localStorage`). No account, no backend.
+Build a form, preview it, and review responses in a table. Everything lives in the browser (`localStorage`). No account, no backend.
 
 ## Run it
 
@@ -9,15 +9,15 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). You should see fluorescent cubicle tubes, a white / canary / pink stack, and a seeded **Desk supply requisition**. Field codes sit on the left rail; type them onto the original, fill it, then export filed copies.
+Open [http://localhost:3000](http://localhost:3000). You should see a field list, a live preview, and a responses table, with a seeded **Desk supply requisition**.
 
-Look: NCR carbon copies under gray cubicle fluorescents (Public Sans + Courier Prime) — not an oak clipboard.
+Look: Tally / Google Forms layout — field list, live preview, responses table — white canvas with a blue accent (Public Sans). Not NCR carbon copies.
 
-## How the sheets work
+## How it works
 
-1. **Type fields** — click a field code or drag it onto the white original. Reorder with the handle. **Tear** removes a line.
-2. **Fill original** — preview as a real form. Required lines stamp **VOID** if you skip them.
-3. **Filed copies** — mock replies (two come with the seed). **Export CSV** downloads a spreadsheet of the pad.
+1. **Fields** — click a field type or drag it onto the form. Reorder with the handle. Delete removes a question.
+2. **Preview** — fill the form as a respondent. Required questions must be answered before submit.
+3. **Responses** — mock replies (two come with the seed). **Export CSV** downloads a spreadsheet.
 
 **Restore seed form** wipes your edits and puts the sample requisition back.
 
@@ -25,6 +25,6 @@ Look: NCR carbon copies under gray cubicle fluorescents (Public Sans + Courier P
 
 - `src/domain` — field kinds, validation, CSV
 - `src/data` — seed requisition and `localStorage`
-- `src/ui` — NCR chrome, builder, fill, copies
+- `src/ui` — product shell, builder, preview, responses
 
-![NCR 3-ply pad under fluorescent cubicle light with the seed desk-supply requisition](docs/ncr-pad.png)
+![Form builder with field list, live preview tabs, and a blue accent on white](docs/form-product.png)
