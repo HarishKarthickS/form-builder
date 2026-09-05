@@ -140,7 +140,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
         }
         onSubmit(answers);
         setAnswers(blankAnswers(form));
-        setReceipt("Carbon copy filed. Check the copies sheet.");
+        setReceipt("Original collated. Canary and pink are in Filed copies.");
       }}
     >
       <header>
@@ -149,7 +149,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
       </header>
 
       {errors.length > 0 ? (
-        <ErrorBanner message="VOID — a few lines did not pass the clerk. Fix the stamped rows." />
+        <ErrorBanner message="VOID — a few lines did not pass control. Fix the red rows." />
       ) : null}
 
       {form.fields.map((field) => (
@@ -165,7 +165,7 @@ export function FillSheet({ form, onSubmit }: FillSheetProps) {
       ))}
 
       <button type="submit" className="file-btn">
-        File this copy
+        File original
       </button>
       {receipt ? <p className="receipt">{receipt}</p> : null}
     </form>

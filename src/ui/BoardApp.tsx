@@ -26,7 +26,7 @@ export function BoardApp() {
   if (!board.form) {
     return (
       <ClipboardFrame onReset={board.restoreSeed}>
-        <EmptyState title="Opening the drawer" body="The clipboard should appear in a moment." />
+        <EmptyState title="Collating the pad" body="The 3-ply should snap into the tray in a moment." />
       </ClipboardFrame>
     );
   }
@@ -53,7 +53,7 @@ export function BoardApp() {
         board.form.fields.length === 0 ? (
           <EmptyState
             title="Nothing to fill"
-            body="Clip at least one field on the first sheet before anyone can sign this."
+            body="Type at least one field on the white original before anyone can file this."
           />
         ) : (
           <FillSheet key={board.form.id} form={board.form} onSubmit={board.submitResponse} />

@@ -6,7 +6,7 @@ type EmptyStateProps = {
 export function EmptyState({ title, body }: EmptyStateProps) {
   return (
     <div className="empty-clip" role="status">
-      <span className="empty-stamp">BLANK</span>
+      <span className="empty-stamp">NO COPY</span>
       <h2>{title}</h2>
       <p>{body}</p>
     </div>
@@ -25,7 +25,7 @@ export function ErrorBanner({ message, onRetry }: ErrorBannerProps) {
       <p>{message}</p>
       {onRetry ? (
         <button type="button" className="wipe" onClick={onRetry}>
-          Try the drawer again
+          Reload the pad
         </button>
       ) : null}
     </div>

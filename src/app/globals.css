@@ -201,6 +201,52 @@ select {
   border: 1px solid #8b9188;
 }
 
+.ncr-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--type);
+}
+
+.ncr-banner .form-no {
+  font-family: var(--font-type), "Courier Prime", monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.ply-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ply-legend li {
+  padding: 4px 8px;
+  border: 1px solid var(--type);
+}
+
+.ply-legend .is-white {
+  background: var(--ncr-white);
+}
+
+.ply-legend .is-canary {
+  background: var(--ncr-canary);
+}
+
+.ply-legend .is-pink {
+  background: var(--ncr-pink);
+}
+
 .sheet-tabs {
   display: flex;
   gap: 0;
