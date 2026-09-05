@@ -1,0 +1,12 @@
+.placeholder-copy {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+body {
+  font-family: var(--font-display), "Palatino Linotype", Palatino, serif;
+}
