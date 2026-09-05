@@ -1,0 +1,134 @@
+.fill-sheet header h2,
+.copies h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.fill-sheet header p,
+.copies header p {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.fill-field {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+}
+
+.fill-field > label {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.fill-field .help {
+  margin: 4px 0 6px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.fill-field input[type="text"],
+.fill-field input[type="email"],
+.fill-field input[type="number"],
+.fill-field input[type="date"],
+.fill-field textarea {
+  width: 100%;
+  max-width: 520px;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  padding: 6px 0;
+}
+
+.choices {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.fill-field.is-void {
+  outline: 2px solid var(--stamp);
+  outline-offset: 6px;
+  background: rgba(180, 35, 24, 0.06);
+}
+
+.void-note {
+  color: var(--stamp);
+  font-family: var(--font-stamp);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin: 6px 0 0;
+}
+
+.file-btn,
+.wipe {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  background: var(--folder);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.file-btn:hover,
+.wipe:hover:not(:disabled) {
+  background: #e4c57a;
+}
+
+.wipe:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.receipt {
+  color: var(--ok);
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.copies-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.table-wrap {
+  overflow: auto;
+  border: 1px solid #cbb892;
+  background: rgba(255, 250, 240, 0.7);
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e0d3b2;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  background: #efe3c4;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
