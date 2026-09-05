@@ -1,6 +1,6 @@
 "use client";
 
-import type { FormAnswer, FormDefinition, FormResponse } from "@/domain";
+import { responsesToCsv, type FormAnswer, type FormDefinition, type FormResponse } from "@/domain";
 
 type CopiesSheetProps = {
   form: FormDefinition;
@@ -14,6 +14,18 @@ function pretty(value: FormAnswer | undefined): string {
   return String(value);
 }
 
+function downloadCsv(form: FormDefinition, responses: FormResponse[]) {
+  const csv = responsesToCsv(form, responses);
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  const slug = form.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "form";
+  link.href = url;
+  link.download = `${slug}-copies.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
   return (
     <section className="copies">
@@ -22,9 +34,19 @@ export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
           <h2>Carbon copies</h2>
           <p>{responses.length} filed against this requisition.</p>
         </div>
-        <button type="button" className="wipe" onClick={onWipe} disabled={responses.length === 0}>
-          Dump the pile
-        </button>
+        <div className="copy-actions">
+          <button
+            type="button"
+            className="wipe"
+            onClick={() => downloadCsv(form, responses)}
+            disabled={responses.length === 0}
+          >
+            Export CSV
+          </button>
+          <button type="button" className="wipe" onClick={onWipe} disabled={responses.length === 0}>
+            Dump the pile
+          </button>
+        </div>
       </header>
 
       <div className="table-wrap">
