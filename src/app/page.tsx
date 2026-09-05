@@ -1,7 +1,5 @@
+import { BoardApp } from "@/ui/BoardApp";
+
 export default function HomePage() {
-  return (
-    <main>
-      <p>form-builder</p>
-    </main>
-  );
+  return <BoardApp />;
 }
