@@ -81,6 +81,12 @@
   background: #e4c57a;
 }
 
+.copy-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .wipe:disabled {
   opacity: 0.45;
   cursor: not-allowed;
