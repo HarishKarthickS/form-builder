@@ -50,7 +50,7 @@ export function BuilderCanvas({
         <input value={form.title} onChange={(event) => onMeta({ title: event.target.value })} />
       </label>
       <label className="meta">
-        Subtitle
+        Description
         <input
           value={form.subtitle}
           onChange={(event) => onMeta({ subtitle: event.target.value })}
@@ -59,8 +59,8 @@ export function BuilderCanvas({
 
       {form.fields.length === 0 ? (
         <EmptyState
-          title="This ply is blank"
-          body="Pick a field code from the left rail, or drag one onto the white original."
+          title="No fields yet"
+          body="Add a field from the list, or drag one onto the form."
         />
       ) : null}
 
@@ -86,14 +86,14 @@ export function BuilderCanvas({
             </button>
             <button type="button" className="field-body" onClick={() => onSelect(field.id)}>
               <span className="field-kind">{field.kind.replaceAll("_", " ")}</span>
-              <strong>{field.label || "Untitled line"}</strong>
-              {field.required ? <span className="req">required</span> : null}
+              <strong>{field.label || "Untitled question"}</strong>
+              {field.required ? <span className="req">Required</span> : null}
               {fieldNeedsOptions(field.kind) ? (
                 <span className="opts">{field.options.join(" · ")}</span>
               ) : null}
             </button>
             <button type="button" className="field-x" onClick={() => onRemove(field.id)}>
-              Tear
+              Delete
             </button>
           </li>
         ))}
@@ -104,7 +104,7 @@ export function BuilderCanvas({
         onDragOver={(event) => event.preventDefault()}
         onDrop={onDropAt(form.fields.length)}
       >
-        Drop a field code here — or click one on the left rail.
+        Drop a field here, or click one on the left.
       </div>
     </div>
   );

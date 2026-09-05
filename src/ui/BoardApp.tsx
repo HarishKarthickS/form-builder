@@ -26,7 +26,7 @@ export function BoardApp() {
   if (!board.form) {
     return (
       <ClipboardFrame onReset={board.restoreSeed}>
-        <EmptyState title="Collating the pad" body="The 3-ply should snap into the tray in a moment." />
+        <EmptyState title="Loading form" body="Your form will appear here in a moment." />
       </ClipboardFrame>
     );
   }
@@ -52,8 +52,8 @@ export function BoardApp() {
       {sheet === "fill" ? (
         board.form.fields.length === 0 ? (
           <EmptyState
-            title="Nothing to fill"
-            body="Type at least one field on the white original before anyone can file this."
+            title="No fields yet"
+            body="Add at least one field before you can preview this form."
           />
         ) : (
           <FillSheet key={board.form.id} form={board.form} onSubmit={board.submitResponse} />

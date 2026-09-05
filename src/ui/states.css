@@ -1,45 +1,35 @@
 .empty-clip,
 .error-banner {
-  border: 1px dashed var(--type);
+  border: 1px solid var(--line);
+  border-radius: 8px;
   padding: 28px 20px;
   text-align: center;
-  background: var(--ncr-canary);
+  background: var(--bg);
 }
 
 .error-banner {
-  background: #ffd6e0;
-}
-
-.empty-stamp,
-.void-stamp {
-  display: inline-block;
-  font-family: var(--font-type);
-  letter-spacing: 0.14em;
-  font-size: 1.15rem;
-  border: 2px solid currentColor;
-  padding: 4px 12px;
-  margin-bottom: 12px;
-}
-
-.empty-stamp {
-  color: var(--type-muted);
-}
-
-.void-stamp {
-  color: var(--alert);
+  background: #fdf4f4;
+  border-color: #f3c4c4;
 }
 
 .empty-clip h2 {
-  margin: 8px 0 6px;
-  font-family: var(--font-ui);
-  font-weight: 800;
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.empty-clip p,
+.error-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .error-banner p {
-  font-size: 1rem;
-  font-family: var(--font-type);
+  color: var(--danger);
 }
 
 .fill-sheet .error-banner {
   margin: 0 0 18px;
+  text-align: left;
 }

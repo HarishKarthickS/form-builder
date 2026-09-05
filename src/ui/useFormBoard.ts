@@ -32,7 +32,7 @@ export function useFormBoard() {
       setResponses(loadResponses(next.id));
       setSelectedId(next.fields[0]?.id ?? null);
     } catch {
-      setLoadError("The clipboard drawer jammed. Reload the page.");
+      setLoadError("Could not load the form. Reload the page or restore the seed.");
     }
   }, []);
 

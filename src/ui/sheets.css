@@ -1,51 +1,41 @@
 .fill-sheet {
-  background: var(--ncr-white);
-  border-left: 4px solid var(--type);
-  padding: 4px 0 8px 12px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 8px 16px;
 }
 
 .fill-sheet header h2,
 .copies h2 {
-  font-family: var(--font-ui);
-  font-size: 1.55rem;
-  font-weight: 800;
+  font-size: 1.45rem;
+  font-weight: 700;
   letter-spacing: -0.03em;
   margin: 0 0 6px;
 }
 
-.copies {
-  background: var(--ncr-canary);
-  margin: -8px -8px 0;
-  padding: 12px;
-  border: 1px solid #c9b02a;
-}
-
-.fill-sheet header p,
-.copies header p {
-  margin: 0 0 18px;
-  color: var(--type-muted);
-  font-family: var(--font-type);
-  font-size: 0.9rem;
+.copies header p,
+.fill-sheet header p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .fill-field {
-  margin: 0 0 16px;
-  padding-bottom: 8px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
 }
 
 .fill-field > label {
-  font-family: var(--font-ui);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: 0.92rem;
+  font-weight: 650;
 }
 
 .fill-field .help {
-  margin: 4px 0 6px;
-  font-size: 0.85rem;
-  color: var(--type-muted);
-  font-family: var(--font-type);
+  margin: 4px 0 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
 
 .fill-field input[type="text"],
@@ -54,52 +44,71 @@
 .fill-field input[type="date"],
 .fill-field textarea {
   width: 100%;
-  max-width: 520px;
   border: none;
-  border-bottom: 1px dotted var(--type);
+  border-bottom: 1px solid var(--line);
   background: transparent;
-  padding: 6px 0;
-  font-family: var(--font-type);
+  padding: 8px 0;
+}
+
+.fill-field input:focus,
+.fill-field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
 }
 
 .choices {
   display: grid;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.choices .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
 }
 
 .fill-field.is-void {
-  outline: 2px solid var(--alert);
-  outline-offset: 6px;
-  background: rgba(196, 18, 48, 0.06);
+  border-color: var(--danger);
+  background: #fdf4f4;
 }
 
 .void-note {
-  color: var(--alert);
-  font-family: var(--font-ui);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 800;
-  margin: 6px 0 0;
+  color: var(--danger);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 8px 0 0;
 }
 
 .file-btn,
 .wipe {
-  font-family: var(--font-ui);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.75rem;
-  border: 1px solid var(--type);
-  background: var(--ncr-canary);
+  font-weight: 650;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
   padding: 10px 16px;
   cursor: pointer;
 }
 
-.file-btn:hover,
+.file-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.file-btn:hover {
+  background: var(--accent-hover);
+}
+
+.wipe {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
 .wipe:hover:not(:disabled) {
-  background: var(--ncr-pink);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .copy-actions {
@@ -114,9 +123,9 @@
 }
 
 .receipt {
-  color: var(--filed);
-  font-family: var(--font-type);
-  margin-top: 10px;
+  color: var(--ok);
+  margin-top: 12px;
+  font-size: 0.9rem;
 }
 
 .copies-head {
@@ -128,35 +137,36 @@
 
 .table-wrap {
   overflow: auto;
-  border: 1px solid var(--type);
-  background: var(--ncr-white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
 }
 
 table {
   border-collapse: collapse;
   min-width: 100%;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
 th,
 td {
-  border-bottom: 1px solid var(--ncr-pink);
-  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
   text-align: left;
   vertical-align: top;
 }
 
 th {
-  font-family: var(--font-ui);
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-size: 0.68rem;
-  font-weight: 800;
-  background: var(--ncr-canary);
+  color: var(--muted);
+  background: var(--bg);
 }
 
 .mono {
-  font-family: var(--font-type);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   white-space: nowrap;
+  color: var(--muted);
 }

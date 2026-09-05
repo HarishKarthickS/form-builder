@@ -11,15 +11,15 @@ export function FieldInspector({ field, onChange }: FieldInspectorProps) {
   if (!field) {
     return (
       <aside className="inspector">
-        <p className="rail-label">Pink ply notes</p>
-        <p className="rail-help">Select a typed line to retitle it on all three copies.</p>
+        <p className="rail-label">Question</p>
+        <p className="rail-help">Select a field to edit its label, help text, and options.</p>
       </aside>
     );
   }
 
   return (
     <aside className="inspector">
-      <p className="rail-label">Pink ply notes</p>
+      <p className="rail-label">Question</p>
       <label>
         Label
         <input value={field.label} onChange={(event) => onChange(field.id, { label: event.target.value })} />
@@ -41,7 +41,7 @@ export function FieldInspector({ field, onChange }: FieldInspectorProps) {
           checked={field.required}
           onChange={(event) => onChange(field.id, { required: event.target.checked })}
         />
-        Required on original
+        Required
       </label>
       {fieldNeedsOptions(field.kind) ? (
         <label>
