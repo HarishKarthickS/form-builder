@@ -1,3 +1,9 @@
+.fill-sheet {
+  background: var(--ncr-white);
+  border-left: 4px solid var(--type);
+  padding: 4px 0 8px 12px;
+}
+
 .fill-sheet header h2,
 .copies h2 {
   font-family: var(--font-ui);
@@ -5,6 +11,13 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   margin: 0 0 6px;
+}
+
+.copies {
+  background: var(--ncr-canary);
+  margin: -8px -8px 0;
+  padding: 12px;
+  border: 1px solid #c9b02a;
 }
 
 .fill-sheet header p,

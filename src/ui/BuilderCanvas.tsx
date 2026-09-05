@@ -59,8 +59,8 @@ export function BuilderCanvas({
 
       {form.fields.length === 0 ? (
         <EmptyState
-          title="This clip is bare"
-          body="Stamp a field from the left rail, or drag one onto the paper."
+          title="This ply is blank"
+          body="Pick a field code from the left rail, or drag one onto the white original."
         />
       ) : null}
 
@@ -93,7 +93,7 @@ export function BuilderCanvas({
               ) : null}
             </button>
             <button type="button" className="field-x" onClick={() => onRemove(field.id)}>
-              Pull
+              Tear
             </button>
           </li>
         ))}
@@ -104,7 +104,7 @@ export function BuilderCanvas({
         onDragOver={(event) => event.preventDefault()}
         onDrop={onDropAt(form.fields.length)}
       >
-        Drop a stamp here — or click one on the left rail.
+        Drop a field code here — or click one on the left rail.
       </div>
     </div>
   );

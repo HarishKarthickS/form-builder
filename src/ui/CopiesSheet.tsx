@@ -32,8 +32,8 @@ export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
     <section className="copies">
       <header className="copies-head">
         <div>
-          <h2>Carbon copies</h2>
-          <p>{responses.length} filed against this requisition.</p>
+          <h2>Filed copies</h2>
+          <p>{responses.length} canary sheets against this pad.</p>
         </div>
         <div className="copy-actions">
           <button
@@ -45,15 +45,15 @@ export function CopiesSheet({ form, responses, onWipe }: CopiesSheetProps) {
             Export CSV
           </button>
           <button type="button" className="wipe" onClick={onWipe} disabled={responses.length === 0}>
-            Dump the pile
+            Clear the pad
           </button>
         </div>
       </header>
 
       {responses.length === 0 ? (
         <EmptyState
-          title="The spindle is empty"
-          body="File a copy from the fill sheet. Seed replies come back if you restore the sample requisition."
+          title="No canary copies"
+          body="File an original from the fill ply. Seed replies return if you restore the sample requisition."
         />
       ) : (
         <div className="table-wrap">

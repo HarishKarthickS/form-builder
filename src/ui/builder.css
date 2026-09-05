@@ -16,6 +16,11 @@
   font-family: var(--font-type);
 }
 
+.palette {
+  border-right: 1px dotted var(--rule);
+  padding-right: 8px;
+}
+
 .palette ul {
   list-style: none;
   margin: 0;

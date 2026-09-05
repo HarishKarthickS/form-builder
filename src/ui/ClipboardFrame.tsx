@@ -34,6 +34,14 @@ export function ClipboardFrame({ children, onReset }: ClipboardFrameProps) {
             <span />
             <span />
           </div>
+          <div className="ncr-banner">
+            <span className="form-no">NCR-12B-ORIG</span>
+            <ul className="ply-legend">
+              <li className="is-white">1 White · keep</li>
+              <li className="is-canary">2 Canary · file</li>
+              <li className="is-pink">3 Pink · audit</li>
+            </ul>
+          </div>
           {children}
         </div>
       </div>

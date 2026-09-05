@@ -9,8 +9,8 @@ type FieldPaletteProps = {
 export function FieldPalette({ onAdd }: FieldPaletteProps) {
   return (
     <aside className="palette">
-      <p className="rail-label">Rubber stamps</p>
-      <p className="rail-help">Click to clip a field. Drag onto the paper to drop it in place.</p>
+      <p className="rail-label">Field codes</p>
+      <p className="rail-help">Click to type a line. Drag onto the white original to seat it.</p>
       <ul>
         {FIELD_STAMPS.map((stamp) => (
           <li key={stamp.kind}>
