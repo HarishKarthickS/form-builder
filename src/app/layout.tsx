@@ -4,6 +4,7 @@ import { Barlow_Condensed, IBM_Plex_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import "@/ui/shell.css";
 import "@/ui/builder.css";
+import "@/ui/sheets.css";
 
 const spectral = Spectral({
   subsets: ["latin"],

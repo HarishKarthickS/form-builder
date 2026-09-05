@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { BuilderCanvas } from "./BuilderCanvas";
 import { ClipboardFrame } from "./ClipboardFrame";
+import { CopiesSheet } from "./CopiesSheet";
 import { FieldInspector } from "./FieldInspector";
 import { FieldPalette } from "./FieldPalette";
+import { FillSheet } from "./FillSheet";
 import { SheetTabs, type SheetName } from "./SheetTabs";
 import { useFormBoard } from "./useFormBoard";
 
@@ -37,13 +39,13 @@ export function BoardApp() {
           />
           <FieldInspector field={board.selected} onChange={board.updateField} />
         </section>
-      ) : (
-        <p className="placeholder-copy">
-          {sheet === "fill"
-            ? "Preview and fill land on the next sheet."
-            : "Submitted copies will stack here."}
-        </p>
-      )}
+      ) : null}
+      {sheet === "fill" ? (
+        <FillSheet key={board.form.id} form={board.form} onSubmit={board.submitResponse} />
+      ) : null}
+      {sheet === "copies" ? (
+        <CopiesSheet form={board.form} responses={board.responses} onWipe={board.wipeCopies} />
+      ) : null}
     </ClipboardFrame>
   );
 }
