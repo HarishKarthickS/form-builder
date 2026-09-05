@@ -1,15 +1,121 @@
-.placeholder-copy {
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--accent);
+  box-shadow: inset 0 0 0 6px var(--surface), inset 0 0 0 8px var(--accent);
+  flex-shrink: 0;
+}
+
+.brand h1 {
   margin: 0;
-  font-family: var(--font-type);
-  color: var(--type-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
-body {
-  font-family: var(--font-ui), "Public Sans", sans-serif;
+.brand .tag {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
-.form-no {
-  font-family: var(--font-type), "Courier Prime", monospace;
+.topbar .reset {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.topbar .reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.workspace {
+  flex: 1;
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto 48px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 24px 28px;
+}
+
+.sheet-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sheet-tabs button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 14px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+}
+
+.sheet-tabs button:hover {
+  color: var(--ink);
+}
+
+.sheet-tabs button[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 240px;
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .topbar {
+    padding: 12px 16px;
+  }
+
+  .workspace {
+    width: calc(100% - 20px);
+    padding: 16px;
+  }
+
+  .board-grid {
+    grid-template-columns: 1fr;
+  }
 }
